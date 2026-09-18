@@ -27,14 +27,14 @@ Docs are written so natural-language plugin questions rank well, for example:
 
 ## Agent skills (this repo)
 
-Project skills live under `.cursor/skills/`:
+Portable skills (any provider): `.agents/skills/`. Cursor also has thin wrappers under `.cursor/skills/` that point at the same files.
 
 | Skill | Use when |
 | --- | --- |
 | `create-volt-docs` | Add a new help-oriented docs page (plugin, guide, workflow) |
 | `refresh-volt-docs` | Sync existing docs from the Volt source tree and reindex search |
 
-Attach or name the skill in chat, or rely on description-based discovery.
+When working from the **Volt** parent repo after product changes, use the parent skills `.agents/skills/update-volt-docs` then `.agents/skills/commit-volt-docs` (spawned as a subagent per Volt `AGENTS.md`).
 
 ## Install
 
