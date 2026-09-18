@@ -1,0 +1,830 @@
+/* Landing shell adapted from p:/volt/docs — scoped to .volt-home */
+
+.volt-home {
+  --site-width: 1240px;
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  position: relative;
+  min-height: 100vh;
+  color: var(--volt-text);
+  font-family: var(--vp-font-family-base);
+}
+
+.volt-home a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.volt-home .site-shell {
+  position: relative;
+  width: min(calc(100% - 32px), var(--site-width));
+  margin: 0 auto;
+  padding: 24px 0 64px;
+  z-index: 1;
+}
+
+.volt-home .ambient {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.volt-home .ambient-one {
+  top: 120px;
+  right: 8%;
+  width: 260px;
+  height: 260px;
+  background: rgba(0, 232, 255, 0.2);
+}
+
+.volt-home .ambient-two {
+  bottom: 80px;
+  left: 4%;
+  width: 300px;
+  height: 300px;
+  background: rgba(184, 119, 219, 0.18);
+}
+
+.volt-home .topbar {
+  position: sticky;
+  top: 16px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  margin-bottom: 32px;
+  background: rgba(8, 12, 18, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  backdrop-filter: blur(18px);
+  box-shadow: var(--volt-shadow-md);
+  z-index: 10;
+}
+
+.volt-home .topbar--slim {
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+}
+
+.volt-home .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.volt-home .brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 28px rgba(0, 232, 255, 0.2);
+}
+
+.volt-home .brand-logo {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.volt-home .brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.volt-home .brand-copy strong {
+  font-size: 0.98rem;
+}
+
+.volt-home .brand-copy small {
+  color: var(--volt-text-dim);
+}
+
+.volt-home .topbar-actions,
+.volt-home .hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.volt-home .nav-toggle {
+  display: none;
+  justify-self: end;
+  padding: 10px 14px;
+  color: var(--volt-text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.volt-home .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.volt-home .button:hover {
+  transform: translateY(-1px);
+}
+
+.volt-home .button-primary {
+  color: #081018;
+  background: linear-gradient(135deg, var(--volt-accent-cyan), #76efff);
+  box-shadow: 0 10px 24px rgba(0, 232, 255, 0.24);
+}
+
+.volt-home .button-ghost {
+  color: var(--volt-text);
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.volt-home .section {
+  position: relative;
+  padding: 44px 0;
+}
+
+.volt-home .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  gap: 22px;
+  align-items: start;
+  padding-top: 24px;
+}
+
+.volt-home .hero-copy,
+.volt-home .hero-panel,
+.volt-home .feature-panel,
+.volt-home .insight-card,
+.volt-home .system-card,
+.volt-home .crate-card,
+.volt-home .workflow-step,
+.volt-home .command-card,
+.volt-home .doc-hub-card {
+  background: var(--volt-bg-panel);
+  border: 1px solid var(--volt-line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--volt-shadow-md);
+  backdrop-filter: blur(14px);
+}
+
+.volt-home .hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 28px;
+  min-height: 100%;
+  min-width: 0;
+}
+
+.volt-home .eyebrow,
+.volt-home .panel-label,
+.volt-home .panel-kicker,
+.volt-home .system-tag,
+.volt-home .insight-index,
+.volt-home .sidebar-nav-label,
+.volt-home .doc-hub-tag {
+  font-family: var(--vp-font-family-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.volt-home .eyebrow,
+.volt-home .panel-label {
+  color: var(--volt-accent-cyan);
+}
+
+.volt-home .hero h1,
+.volt-home .section-heading h2 {
+  margin: 10px 0 0;
+  font-family: 'Orbitron', sans-serif;
+  line-height: 1.04;
+}
+
+.volt-home .hero h1 {
+  max-width: 14ch;
+  font-size: clamp(2.4rem, 4.4vw, 4.4rem);
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.volt-home .hero-text,
+.volt-home .feature-panel p,
+.volt-home .section-copy,
+.volt-home .system-card p,
+.volt-home .crate-card li,
+.volt-home .workflow-step p,
+.volt-home .command-card p,
+.volt-home .insight-card p,
+.volt-home .doc-hub-card p {
+  color: var(--volt-text-dim);
+  line-height: 1.75;
+}
+
+.volt-home .hero-text {
+  max-width: 64ch;
+  margin: 18px 0 28px;
+  font-size: 1.05rem;
+}
+
+.volt-home .hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.volt-home .metric-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.volt-home .metric-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: var(--volt-accent-green);
+}
+
+.volt-home .metric-label {
+  color: var(--volt-text-dim);
+  font-size: 0.94rem;
+}
+
+.volt-home .hero-panel,
+.volt-home .feature-panel,
+.volt-home .insight-card,
+.volt-home .system-card,
+.volt-home .crate-card,
+.volt-home .workflow-step,
+.volt-home .command-card {
+  position: relative;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.volt-home .hero-panel::before,
+.volt-home .feature-panel::before,
+.volt-home .insight-card::before,
+.volt-home .system-card::before,
+.volt-home .crate-card::before,
+.volt-home .workflow-step::before,
+.volt-home .command-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--volt-accent-cyan),
+    var(--volt-accent-purple),
+    transparent
+  );
+}
+
+.volt-home .panel-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.volt-home .panel-heading strong {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+}
+
+.volt-home .panel-kicker {
+  color: var(--volt-accent-purple);
+}
+
+.volt-home .stack {
+  display: grid;
+  gap: 14px;
+}
+
+.volt-home .stack-layer {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.volt-home .stack-layer h2 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.volt-home .stack-layer p {
+  margin: 0;
+  color: var(--volt-text-dim);
+  line-height: 1.7;
+}
+
+.volt-home .stack-layer span {
+  white-space: nowrap;
+  font-size: 0.78rem;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-family: var(--vp-font-family-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.volt-home .layer-purple span {
+  color: var(--volt-accent-purple);
+  background: rgba(184, 119, 219, 0.12);
+}
+
+.volt-home .layer-cyan span {
+  color: var(--volt-accent-cyan);
+  background: rgba(0, 232, 255, 0.1);
+}
+
+.volt-home .layer-green span {
+  color: var(--volt-accent-green);
+  background: rgba(186, 230, 126, 0.12);
+}
+
+.volt-home .layer-rust span {
+  color: var(--volt-accent-rust);
+  background: rgba(247, 76, 0, 0.12);
+}
+
+.volt-home .overview-grid,
+.volt-home .systems-grid,
+.volt-home .crate-grid,
+.volt-home .command-grid,
+.volt-home .doc-hub-grid,
+.volt-home .architecture-notes {
+  display: grid;
+  gap: 18px;
+}
+
+.volt-home .overview-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.volt-home .feature-panel h2,
+.volt-home .system-card h3,
+.volt-home .crate-card h3,
+.volt-home .workflow-step h3,
+.volt-home .command-card h3,
+.volt-home .insight-card h3,
+.volt-home .doc-hub-card h3 {
+  margin: 12px 0 10px;
+}
+
+.volt-home .feature-follow {
+  margin-top: 14px;
+}
+
+.volt-home .section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.volt-home .section-heading h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.volt-home .section-copy {
+  max-width: 54ch;
+}
+
+.volt-home .text-link {
+  color: var(--volt-accent-cyan);
+  font-weight: 600;
+}
+
+.volt-home .architecture-notes {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.volt-home .insight-index {
+  color: var(--volt-accent-rust);
+}
+
+.volt-home .systems-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.volt-home .systems-follow {
+  margin-top: 18px;
+}
+
+.volt-home .system-tag {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--volt-text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.volt-home .accent-purple {
+  border-color: rgba(184, 119, 219, 0.22);
+}
+
+.volt-home .accent-cyan {
+  border-color: rgba(0, 232, 255, 0.22);
+}
+
+.volt-home .accent-green {
+  border-color: rgba(186, 230, 126, 0.22);
+}
+
+.volt-home .accent-rust {
+  border-color: rgba(247, 76, 0, 0.22);
+}
+
+.volt-home .crate-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.volt-home .crate-card ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.volt-home .crate-card code,
+.volt-home .command-card code,
+.volt-home .feature-panel code {
+  color: var(--volt-accent-green);
+  font-family: var(--vp-font-family-mono);
+}
+
+.volt-home .workflow-timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.volt-home .workflow-step {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 18px;
+  padding: 22px 24px;
+}
+
+.volt-home .workflow-step > span {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(0, 232, 255, 0.16), rgba(184, 119, 219, 0.16));
+  color: var(--volt-accent-cyan);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.volt-home .command-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.volt-home .command-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.volt-home .copy-button {
+  padding: 8px 12px;
+  color: var(--volt-text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 180ms ease;
+  font: inherit;
+}
+
+.volt-home .copy-button:hover,
+.volt-home .copy-button.is-copied {
+  border-color: rgba(0, 232, 255, 0.4);
+  background: rgba(0, 232, 255, 0.12);
+}
+
+.volt-home .command-card pre {
+  margin: 16px 0 12px;
+  padding: 18px;
+  overflow-x: auto;
+  background: rgba(7, 11, 17, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+}
+
+.volt-home .doc-hub-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.volt-home .doc-hub-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100%;
+  padding: 22px;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.volt-home .doc-hub-card:hover {
+  border-color: var(--volt-line-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--volt-shadow-lg);
+}
+
+.volt-home .doc-hub-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.volt-home .doc-hub-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.volt-home .doc-hub-tag {
+  align-self: flex-start;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--volt-accent-cyan);
+  border: 1px solid rgba(0, 232, 255, 0.24);
+  border-radius: 999px;
+  padding: 3px 9px;
+  background: rgba(0, 232, 255, 0.06);
+}
+
+.volt-home .page-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 216px;
+  gap: 40px;
+  align-items: start;
+}
+
+.volt-home .page-sidebar {
+  position: sticky;
+  top: 96px;
+  padding-top: 21px;
+}
+
+.volt-home .sidebar-nav {
+  position: relative;
+  background: var(--volt-bg-panel);
+  border: 1px solid var(--volt-line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--volt-shadow-md);
+  backdrop-filter: blur(14px);
+  padding: 22px 18px 20px;
+  overflow: hidden;
+}
+
+.volt-home .sidebar-nav::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--volt-accent-cyan),
+    var(--volt-accent-purple),
+    transparent
+  );
+}
+
+.volt-home .sidebar-nav-label {
+  color: var(--volt-accent-cyan);
+  margin: 0 0 14px;
+}
+
+.volt-home .sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.volt-home .sidebar-nav li a {
+  display: block;
+  padding: 8px 10px;
+  color: var(--volt-text-dim);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  transition:
+    color 180ms ease,
+    background 180ms ease;
+}
+
+.volt-home .sidebar-nav li a:hover,
+.volt-home .sidebar-nav li a.is-active {
+  color: var(--volt-text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.volt-home .site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 22px;
+  padding: 28px 0 10px;
+  color: var(--volt-text-dim);
+}
+
+.volt-home .site-footer strong,
+.volt-home .site-footer a {
+  color: var(--volt-text);
+}
+
+.volt-home .site-footer-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.volt-home .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 560ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.volt-home .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1120px) {
+  .volt-home .hero,
+  .volt-home .systems-grid,
+  .volt-home .crate-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .volt-home .architecture-notes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .volt-home .overview-grid,
+  .volt-home .command-grid,
+  .volt-home .doc-hub-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .volt-home .page-layout {
+    grid-template-columns: minmax(0, 1fr) 196px;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 860px) {
+  .volt-home .site-shell {
+    width: min(calc(100% - 20px), var(--site-width));
+    padding-top: 16px;
+  }
+
+  .volt-home .topbar {
+    grid-template-columns: auto auto;
+    border-radius: 28px;
+  }
+
+  .volt-home .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .volt-home .topbar-actions {
+    display: none;
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .volt-home.is-menu-open .topbar-actions {
+    display: flex;
+    padding-top: 8px;
+  }
+
+  .volt-home .hero,
+  .volt-home .systems-grid,
+  .volt-home .crate-grid,
+  .volt-home .command-grid,
+  .volt-home .page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .volt-home .hero h1 {
+    max-width: none;
+  }
+
+  .volt-home .hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .volt-home .architecture-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .volt-home .section-heading,
+  .volt-home .site-footer,
+  .volt-home .panel-heading {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .volt-home .workflow-step {
+    grid-template-columns: 1fr;
+  }
+
+  .volt-home .page-sidebar {
+    position: static;
+    display: none;
+  }
+
+  .volt-home .page-sidebar.is-open {
+    display: block;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .volt-home .hero-copy,
+  .volt-home .hero-panel,
+  .volt-home .feature-panel,
+  .volt-home .insight-card,
+  .volt-home .system-card,
+  .volt-home .crate-card,
+  .volt-home .workflow-step,
+  .volt-home .command-card,
+  .volt-home .doc-hub-card {
+    padding: 20px;
+  }
+
+  .volt-home .button,
+  .volt-home .copy-button,
+  .volt-home .nav-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .volt-home .hero-actions,
+  .volt-home .topbar-actions {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .volt-home .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

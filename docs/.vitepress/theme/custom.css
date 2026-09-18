@@ -1,0 +1,247 @@
+/**
+ * Volt docs theme — mirrors p:/volt/docs/styles.css tokens on VitePress.
+ */
+
+:root {
+  --volt-bg: #070b11;
+  --volt-bg-elevated: #0f1520;
+  --volt-bg-panel: rgba(20, 27, 38, 0.92);
+  --volt-bg-soft: rgba(255, 255, 255, 0.03);
+  --volt-text: #edf3ff;
+  --volt-text-dim: #90a0b8;
+  --volt-line: rgba(144, 160, 184, 0.18);
+  --volt-line-strong: rgba(0, 232, 255, 0.34);
+  --volt-accent-rust: #f74c00;
+  --volt-accent-cyan: #00e8ff;
+  --volt-accent-purple: #b877db;
+  --volt-accent-green: #bae67e;
+  --volt-shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.45);
+  --volt-shadow-md: 0 14px 40px rgba(0, 0, 0, 0.28);
+
+  --vp-font-family-base: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --vp-c-brand-1: var(--volt-accent-cyan);
+  --vp-c-brand-2: #76efff;
+  --vp-c-brand-3: #00b8cc;
+  --vp-c-brand-soft: rgba(0, 232, 255, 0.12);
+
+  --vp-c-bg: var(--volt-bg);
+  --vp-c-bg-alt: #06090f;
+  --vp-c-bg-elv: var(--volt-bg-elevated);
+  --vp-c-bg-soft: #0c121b;
+
+  --vp-c-border: var(--volt-line);
+  --vp-c-divider: rgba(144, 160, 184, 0.14);
+  --vp-c-gutter: #06090f;
+
+  --vp-c-text-1: var(--volt-text);
+  --vp-c-text-2: var(--volt-text-dim);
+  --vp-c-text-3: rgba(144, 160, 184, 0.72);
+
+  --vp-c-default-1: #1a2330;
+  --vp-c-default-2: #141c28;
+  --vp-c-default-3: #101821;
+  --vp-c-default-soft: rgba(255, 255, 255, 0.04);
+
+  --vp-c-mute: #121a26;
+  --vp-c-mute-light: #182231;
+  --vp-c-mute-lighter: #1e2a3b;
+  --vp-c-mute-dark: #0d141e;
+  --vp-c-mute-darker: #0a1018;
+
+  --vp-c-indigo-1: var(--volt-accent-cyan);
+  --vp-c-indigo-2: #76efff;
+  --vp-c-indigo-3: #00b8cc;
+  --vp-c-indigo-soft: rgba(0, 232, 255, 0.12);
+
+  --vp-c-tip-1: var(--volt-accent-green);
+  --vp-c-tip-2: #9fd45a;
+  --vp-c-tip-3: #7fb83a;
+  --vp-c-tip-soft: rgba(186, 230, 126, 0.12);
+
+  --vp-c-warning-1: #ffb454;
+  --vp-c-warning-2: #f6a623;
+  --vp-c-warning-3: #d4890f;
+  --vp-c-warning-soft: rgba(255, 180, 84, 0.12);
+
+  --vp-c-danger-1: var(--volt-accent-rust);
+  --vp-c-danger-2: #ff6a2a;
+  --vp-c-danger-3: #d63d00;
+  --vp-c-danger-soft: rgba(247, 76, 0, 0.12);
+
+  --vp-c-sponsor: var(--volt-accent-purple);
+
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #081018;
+  --vp-button-brand-bg: linear-gradient(135deg, var(--volt-accent-cyan), #76efff);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: #081018;
+  --vp-button-brand-hover-bg: linear-gradient(135deg, #76efff, #a8f5ff);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: #081018;
+  --vp-button-brand-active-bg: #00c8db;
+
+  --vp-button-alt-border: rgba(255, 255, 255, 0.12);
+  --vp-button-alt-text: var(--volt-text);
+  --vp-button-alt-bg: rgba(255, 255, 255, 0.04);
+  --vp-button-alt-hover-border: rgba(0, 232, 255, 0.34);
+  --vp-button-alt-hover-text: var(--volt-text);
+  --vp-button-alt-hover-bg: rgba(0, 232, 255, 0.08);
+  --vp-button-alt-active-border: rgba(0, 232, 255, 0.34);
+  --vp-button-alt-active-text: var(--volt-text);
+  --vp-button-alt-active-bg: rgba(0, 232, 255, 0.12);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    135deg,
+    var(--volt-accent-cyan) 0%,
+    var(--volt-accent-purple) 55%,
+    var(--volt-accent-rust) 100%
+  );
+
+  --vp-code-block-bg: rgba(7, 11, 17, 0.88);
+  --vp-code-copy-code-bg: rgba(255, 255, 255, 0.05);
+  --vp-code-copy-code-hover-bg: rgba(0, 232, 255, 0.12);
+
+  --vp-custom-block-tip-border: rgba(186, 230, 126, 0.24);
+  --vp-custom-block-tip-text: var(--volt-text-dim);
+  --vp-custom-block-tip-bg: rgba(186, 230, 126, 0.06);
+  --vp-custom-block-tip-code-bg: rgba(7, 11, 17, 0.55);
+
+  --vp-local-nav-bg-color: rgba(8, 12, 18, 0.86);
+  --vp-nav-bg-color: rgba(8, 12, 18, 0.78);
+  --vp-sidebar-bg-color: rgba(7, 11, 17, 0.92);
+  --vp-backdrop-bg-color: rgba(6, 9, 15, 0.72);
+}
+
+.dark {
+  --vp-c-brand-1: var(--volt-accent-cyan);
+  --vp-c-brand-2: #76efff;
+  --vp-c-brand-3: #00b8cc;
+  --vp-c-brand-soft: rgba(0, 232, 255, 0.14);
+
+  --vp-c-bg: var(--volt-bg);
+  --vp-c-bg-alt: #06090f;
+  --vp-c-bg-elv: var(--volt-bg-elevated);
+  --vp-c-bg-soft: #0c121b;
+
+  --vp-c-border: var(--volt-line);
+  --vp-c-divider: rgba(144, 160, 184, 0.14);
+  --vp-c-gutter: #06090f;
+
+  --vp-c-text-1: var(--volt-text);
+  --vp-c-text-2: var(--volt-text-dim);
+  --vp-c-text-3: rgba(144, 160, 184, 0.72);
+}
+
+html,
+body {
+  background:
+    radial-gradient(circle at top left, rgba(247, 76, 0, 0.14), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(0, 232, 255, 0.12), transparent 24%),
+    radial-gradient(circle at 50% 120%, rgba(184, 119, 219, 0.16), transparent 38%),
+    linear-gradient(180deg, #06090f 0%, #090d14 48%, #06080d 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.VPNav,
+.VPLocalNav,
+.VPSidebar,
+.VPContent,
+.VPFooter {
+  position: relative;
+  z-index: 1;
+}
+
+.VPNavBar {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(18px);
+}
+
+.VPNavBar .title {
+  font-weight: 700;
+}
+
+.VPNavBarTitle .logo {
+  height: 28px;
+  width: 28px;
+  border-radius: 8px;
+  box-shadow: 0 0 22px rgba(0, 232, 255, 0.22);
+}
+
+.VPSidebarItem.is-active > .item .link > .text {
+  color: var(--volt-accent-cyan) !important;
+}
+
+.VPDoc h1,
+.VPDoc h2 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.VPDoc h2 {
+  border-top: none;
+  margin-top: 2rem;
+}
+
+.VPDoc a {
+  color: var(--volt-accent-cyan);
+}
+
+.VPDoc a:hover {
+  color: #76efff;
+}
+
+.vp-doc div[class*='language-'] {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(7, 11, 17, 0.88) !important;
+}
+
+.vp-doc :not(pre) > code {
+  color: var(--volt-accent-green);
+  background: rgba(186, 230, 126, 0.08);
+  border: 1px solid rgba(186, 230, 126, 0.14);
+}
+
+.VPLocalSearchBox,
+.doc-search__panel {
+  border-color: var(--volt-line) !important;
+  box-shadow: var(--volt-shadow-lg) !important;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070b11;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--volt-accent-cyan), var(--volt-accent-purple));
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

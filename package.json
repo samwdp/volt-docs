@@ -1,0 +1,22 @@
+{
+  "name": "volt-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Documentation site for the Volt editor",
+  "type": "module",
+  "scripts": {
+    "predev": "tsx docs/.vitepress/search/build-index.ts",
+    "dev": "vitepress dev docs",
+    "prebuild": "tsx docs/.vitepress/search/build-index.ts",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "index": "tsx docs/.vitepress/search/build-index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.13"
+  }
+}
