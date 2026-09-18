@@ -42,6 +42,7 @@ export default defineConfig({
       { text: 'Configuration', link: '/configuration' },
       { text: 'Plugins', link: '/plugins/catalog' },
       { text: 'Help', link: '/search' },
+      { text: 'Changelog', link: '/guides/changelog' },
       { text: 'GitHub', link: 'https://github.com/samwdp/volt' },
     ],
 
@@ -89,6 +90,7 @@ export default defineConfig({
           { text: 'DAP', link: '/plugins/dap' },
           { text: 'DB', link: '/plugins/db' },
           { text: 'Git', link: '/plugins/git' },
+          { text: 'Help', link: '/plugins/help' },
           { text: 'Hover', link: '/plugins/hover' },
           { text: 'Image', link: '/plugins/image' },
           { text: 'Interactive', link: '/plugins/interactive' },
@@ -113,6 +115,7 @@ export default defineConfig({
         text: 'How-to guides',
         items: [
           { text: 'Builtin themes', link: '/guides/builtin-themes' },
+          { text: 'Changelog', link: '/guides/changelog' },
           { text: 'Change keybindings', link: '/guides/change-keybindings' },
           { text: 'Change theme and font', link: '/guides/change-theme' },
           { text: 'Change terminal shell', link: '/guides/change-terminal-shell' },

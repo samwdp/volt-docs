@@ -15,13 +15,14 @@ Each builtin feature package has its **own documentation page** describing what 
 | --- | --- | --- |
 | `acp` | Agent Client Protocol clients, sessions, dock | [ACP Plugin](/plugins/acp) |
 | `autocomplete` | Provider-backed insert completions | [Autocomplete Plugin](/plugins/autocomplete) |
-| `browser` | Embedded browser buffers | [Browser Plugin](/plugins/browser) |
+| `browser` | Embedded browser buffers, tabs, bookmarks, dock | [Browser Plugin](/plugins/browser) |
 | `buffer` | Save, close, wrap file buffers | [Buffer Plugin](/plugins/buffer) |
 | `calculator` | Expression evaluator Input/Output buffer | [Calculator Plugin](/plugins/calculator) |
 | `compile` | Workspace build, recompile, reload user lib | [Compile Plugin](/plugins/compile) |
 | `dap` | Debug Adapter Protocol sessions | [DAP Plugin](/plugins/dap) |
 | `db` | Database connections, SQL, schema, dashboard | [DB Plugin](/plugins/db) |
 | `git` | Magit-style status/commit/diff/log buffers | [Git Plugin](/plugins/git) |
+| `help` | Docs question prompt → search in browser split | [Help Plugin](/plugins/help) |
 | `hover` | Cursor hover overlay + providers | [Hover Plugin](/plugins/hover) |
 | `image` | Native image zoom / SVG mode | [Image Plugin](/plugins/image) |
 | `interactive` | Interactive readonly/input buffers | [Interactive Plugin](/plugins/interactive) |

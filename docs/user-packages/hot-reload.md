@@ -10,14 +10,17 @@ description: How Volt hot-reloads the user package with workspace.compile, stagi
 ## In a release install
 
 1. Open the released Volt binary (User Source Tree is the default workspace beside the executable).
-2. Run the command **`workspace.compile`** (default chord often `F5` via the compile package — confirm in your keybindings).
-3. The prompt prefills `cargo build --release -p volt-user`.
+2. Run **`workspace.compile`** (from the command palette / `F3`, or your custom chord).
+3. The prompt prefills `cargo build --release -p volt-user` for the shipped User Source Tree.
 4. On success Volt:
-   - Copies the artifact to a unique path under `user/target/<profile>/volt-user-hot/`
+   - Streams build output into the `*compile <workspace>*` popup
+   - Copies the artifact to a unique path under `target/<profile>/volt-user-hot/`
    - Loads that copy into the running process
    - Shows a success notification
 
 Staging avoids overwriting a mapped library. That matters especially on **Windows**, where a loaded `user.dll` cannot be replaced in place.
+
+Use **`workspace.recompile`** (`S-F5`) to re-run the last build command, or **`workspace.reload-user-library`** to reload after an external rebuild.
 
 ## From source (dev loop)
 
@@ -60,5 +63,6 @@ See ADR 0008 in the Volt repository: *User Source Tree and Plugin SDK boundary*.
 
 ## Related help topics
 
+- [Compile Plugin](/plugins/compile)
 - [Build the user package](/user-packages/build)
 - [Troubleshooting](/user-packages/troubleshooting)

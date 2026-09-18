@@ -1,13 +1,13 @@
 ---
 title: ACP Plugin
-description: Agent Client Protocol integrations — clients, sessions, models, permissions, and the ACP dock.
+description: Agent Client Protocol integrations — clients, sessions, models, permissions, plan/output panes, and the ACP dock.
 ---
 
 # ACP Plugin
 
-**Help query:** "What does the acp plugin do?" / "How do I use acp in Volt?"
+**Help query:** "What does the acp plugin do?" / "How do I use acp in Volt?" / "How do I open the ACP dock?"
 
-The **acp** plugin integrates **Agent Client Protocol** clients into Volt. It manages client/session/model/mode pickers, permission approve/deny, an ACP buffer with plan/output panes, and an ACP dock for switching sessions.
+The **acp** plugin integrates **Agent Client Protocol** clients into Volt. It manages client/session/model/mode pickers, permission approve/deny, an ACP buffer with plan/output panes, and an ACP dock for switching sessions. ACP helper processes are Owned Processes tied to workspace lifetime.
 
 | | |
 | --- | --- |
@@ -18,6 +18,7 @@ The **acp** plugin integrates **Agent Client Protocol** clients into Volt. It ma
 
 - Pick and connect ACP clients configured in user config
 - Create sessions and switch modes/models
+- Switch focus between plan and output panes
 - Handle permission prompts (approve/deny)
 - Provide dock navigation and input focus helpers
 
@@ -35,11 +36,11 @@ The **acp** plugin integrates **Agent Client Protocol** clients into Volt. It ma
 | `acp.complete-slash` | Opens ACP slash command completion. |
 | `acp.focus-input` | Focuses the ACP input section and enters insert mode. |
 | `acp.disconnect` | Disconnects the active ACP client. |
-| `acp.permission-approve` | Approves the latest permission request. |
-| `acp.permission-deny` | Denies the latest permission request. |
-| `acp.dock.toggle` | Shows or hides the ACP dock. |
-| `acp.dock.previous` | Selects the previous ACP dock entry. |
-| `acp.dock.next` | Selects the next ACP dock entry. |
+| `acp.permission-approve` | Approves the latest ACP permission request. |
+| `acp.permission-deny` | Denies the latest ACP permission request. |
+| `acp.dock.toggle` | Shows or hides the ACP dock for the active workspace. |
+| `acp.dock.previous` | Moves to the previous ACP buffer in the dock list. |
+| `acp.dock.next` | Moves to the next ACP buffer in the dock list. |
 
 ## Keybindings
 
@@ -49,14 +50,16 @@ The **acp** plugin integrates **Agent Client Protocol** clients into Volt. It ma
 | `Ctrl+Tab` | `acp.switch-pane` | Workspace |
 | `Ctrl+m` | `acp.pick-model` | Workspace (Normal) |
 | `Ctrl+s` | `acp.pick-session` | Workspace (Normal) |
-| `j / k` | `acp.dock.next / previous` | AcpDock |
+| `j` / `k` | `acp.dock.next` / `previous` | AcpDock |
 | `I` | `acp.focus-input` | Workspace (Normal) on ACP buffer |
 
 ## Notes
 
 Client list comes from `user/config/acp.yaml` (via `config.yaml`). Buffer kind is `acp`.
+
 ## Related pages
 
+- [LSP Plugin](/plugins/lsp)
 - [Builtin plugin catalog](/plugins/catalog)
 - [Edit a plugin](/user-packages/edit-plugin)
 - [Plugin concepts](/user-packages/concepts)

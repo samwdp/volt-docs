@@ -47,6 +47,8 @@ cargo build -p volt -p volt-user --release
 cargo run -p volt
 ```
 
+Press **F1** (or run `help`) to ask a docs question; Volt opens search in a [browser](/plugins/browser) split. See [Help Plugin](/plugins/help).
+
 Smoke-test without an interactive window:
 
 ```bash
