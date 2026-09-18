@@ -31,6 +31,7 @@ The **browser** plugin opens an embedded browser buffer (`*browser*`) for in-edi
 | `browser.add-tab` | Creates a new tab in the browser buffer currently in view. |
 | `browser.bookmarks` | Opens a picker of saved bookmarks. Uses add-tab when a browser is in view, otherwise open. |
 | `browser.bookmark-add` | Saves the current browser page URL as a named bookmark in the Volt data folder. |
+| `browser.bookmark-rename` | Renames the selected bookmark in the bookmarks picker (`Ctrl+r`). |
 | `browser.tabs` | Opens a picker of tabs in the active browser buffer. |
 | `browser.dock` | Toggles the browser dock listing open browser buffers and tabs. |
 | `browser.dock.previous` | Moves to the previous entry in the browser dock. |
@@ -48,6 +49,7 @@ The **browser** plugin opens an embedded browser buffer (`*browser*`) for in-edi
 | --- | --- | --- |
 | `I` | `browser.focus-input` | Workspace (Normal) on browser buffer |
 | `Enter` / `Ctrl+Enter` | `browser.navigate` | Workspace (Insert) on browser buffer |
+| `Ctrl+r` | `browser.bookmark-rename` | Bookmarks picker extra |
 | `j` | `browser.dock.next` | BrowserDock |
 | `k` | `browser.dock.previous` | BrowserDock |
 | `Ctrl+d` | `browser.dock.close` | BrowserDock |

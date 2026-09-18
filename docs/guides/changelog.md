@@ -13,6 +13,7 @@ Filter-friendly log of user-facing editor changes mirrored into these docs. Issu
 
 | Type | Summary |
 | --- | --- |
+| feat | Browser bookmarks picker: `Ctrl+r` renames friendly name, then restores picker focus — [Browser](/plugins/browser) |
 | feat | Embedded browser: tabs, bookmarks, bookmark-add, and browser dock (`j`/`k`/`Ctrl+d`) — [Browser](/plugins/browser) |
 | feat | In-editor help: `help` command + **F1** opens docs search in a browser split — [Help](/plugins/help) |
 | feat | Picker previews show more file body lines (shared 256-line cap) and configurable split fraction — [Picker](/plugins/picker) |
