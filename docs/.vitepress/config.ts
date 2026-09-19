@@ -89,6 +89,7 @@ export default defineConfig({
           { text: 'Compile', link: '/plugins/compile' },
           { text: 'DAP', link: '/plugins/dap' },
           { text: 'DB', link: '/plugins/db' },
+          { text: 'Dotnet', link: '/plugins/dotnet' },
           { text: 'Git', link: '/plugins/git' },
           { text: 'Help', link: '/plugins/help' },
           { text: 'Hover', link: '/plugins/hover' },

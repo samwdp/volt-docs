@@ -21,6 +21,7 @@ Each builtin feature package has its **own documentation page** describing what 
 | `compile` | Workspace build, recompile, reload user lib | [Compile Plugin](/plugins/compile) |
 | `dap` | Debug Adapter Protocol sessions | [DAP Plugin](/plugins/dap) |
 | `db` | Database connections, SQL, schema, dashboard | [DB Plugin](/plugins/db) |
+| `dotnet` | NuGet list/search/install section buffers | [Dotnet Plugin](/plugins/dotnet) |
 | `git` | Magit-style status/commit/diff/log buffers | [Git Plugin](/plugins/git) |
 | `help` | Docs question prompt → search in browser split | [Help Plugin](/plugins/help) |
 | `hover` | Cursor hover overlay + providers | [Hover Plugin](/plugins/hover) |

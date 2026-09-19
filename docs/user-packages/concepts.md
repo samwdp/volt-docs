@@ -148,11 +148,24 @@ PluginBufferSections::new(vec![
 
 See `user/calculator.rs` for a full evaluate cycle, and wire the handler in `UserLibraryImpl::run_plugin_buffer_evaluator` inside `user/lib.rs`.
 
+### Section-tree buffers
+
+For magit-style trees (collapse headers, interactable items), declare:
+
+```rust
+PluginBuffer::new("my-kind", vec!["Loading…".to_owned()])
+    .with_section_handler("my.handler")
+```
+
+That sets `PluginBufferContentMode::SectionTree`. Host hooks `plugin.section.refresh|activate|toggle|prev-item|next-item` call `UserLibrary::run_plugin_section_handler`, which uses the evaluator JSON protocol (`section:<handler>`). See `user/dotnet.rs`.
+
 ## In-process Volt API
 
 New host capabilities for packages go through the SDK function table:
 
-- `volt::buf` — buffer introspection
+- `volt::buf` — buffer introspection (including section action / set cursor)
+- `volt::job` — Silent Commands (`run_silent`)
+- `volt::workspace_root` — active workspace path
 - `volt::lsp` — language server requests
 - `volt::ui` — UI helpers such as opening locations
 - `volt::hook` — hook-related helpers
