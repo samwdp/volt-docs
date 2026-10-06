@@ -1,11 +1,11 @@
 ---
 title: Workspace Plugin
-description: Workspace creation, switching, deletion, cloning, file listing, search, marks, windows, and formatting.
+description: Workspace creation (+ Create New), switching, deletion, cloning, file listing, search, marks, windows, and formatting.
 ---
 
 # Workspace Plugin
 
-**Help query:** "What does the workspace plugin do?" / "How do I switch workspaces?" / "How do I delete a workspace from the picker?"
+**Help query:** "What does the workspace plugin do?" / "How do I switch workspaces?" / "How do I create a new project workspace?" / "How do I delete a workspace from the picker?"
 
 The **workspace** plugin manages Volt workspaces: create/switch/delete/clone, open the worktree dashboard, list Git-visible files, search the project, save, format, window focus, and numbered marks.
 
@@ -16,7 +16,7 @@ The **workspace** plugin manages Volt workspaces: create/switch/delete/clone, op
 
 ## What it does
 
-- Create or focus a workspace from the project picker
+- Create or focus a workspace from the project picker, including `+ Create New`
 - Switch among open workspaces and discovered projects (`workspace.switch`)
 - Delete a workspace (dock, delete picker, or `Ctrl+d` in the switch picker)
 - Clone remotes into an oil directory; show checked-out worktrees
@@ -51,6 +51,12 @@ The **workspace** plugin manages Volt workspaces: create/switch/delete/clone, op
 _No package-level keybindings declared (may be bound from vim leader maps or YAML)._
 
 Picker extras on `workspace.switch`: `Ctrl+d` runs `workspace.delete`. See also [Workspace Dock](/plugins/workspace-dock) for dock `j` / `k` / `Ctrl+d`.
+
+## Create a new project
+
+`workspace.new` and `workspace.switch` include a `+ Create New` row. The `+` prefix matches the worktree dashboard row `+ new worktree`. The row is always the first item in the unopened-projects section: after already-open projects on `workspace.new`, and after the divider on `workspace.switch`.
+
+Choosing it opens an [oil](/plugins/oil) directory buffer at the first project search root (`user/config/workspace.yaml`). Add one new directory there (a line with a trailing `/`). Volt runs `git init` in that directory and opens it as a project workspace. Adding a file in that oil buffer does not run `git init`. Closing the oil buffer cancels the pending create.
 
 ## Notes
 

@@ -9,6 +9,12 @@ description: Recent Volt editor changes relevant to docs, plugins, and in-editor
 
 Filter-friendly log of user-facing editor changes mirrored into these docs. Issue links use GitHub: `#N` → `https://github.com/samwdp/volt/issues/N`.
 
+## 2026-10-06
+
+| Type | Summary |
+| --- | --- |
+| feat | `workspace.new` and `workspace.switch` pickers include `+ Create New`: oil at the first project search root, one new directory (trailing `/`) runs `git init` and opens the workspace — [Workspace](/plugins/workspace) |
+
 ## 2026-09-18
 
 | Type | Summary |
