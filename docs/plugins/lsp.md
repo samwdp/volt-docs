@@ -1,11 +1,11 @@
 ---
 title: LSP Plugin
-description: Language server integration — start/stop from pickers, navigation, diagnostics, code actions, Copilot, and auto-start on file open.
+description: Language server integration — start/stop from pickers, navigation, diagnostics, code actions, Copilot, PowerShell Editor Services, and auto-start on file open.
 ---
 
 # LSP Plugin
 
-**Help query:** "What does the lsp plugin do?" / "How do I use lsp in Volt?" / "How do I start rust-analyzer?"
+**Help query:** "What does the lsp plugin do?" / "How do I use lsp in Volt?" / "How do I start rust-analyzer?" / "PowerShell LSP in Volt?"
 
 The **lsp** plugin is Volt's language server integration. It starts and stops servers, jumps to definition/references/implementation, shows diagnostics and code actions, supports Copilot sign-in, and auto-starts the right server when matching files open. Live sessions are Owned Processes: Workspace Close and Application Quit tear them down through Process Launch.
 
@@ -21,7 +21,7 @@ The **lsp** plugin is Volt's language server integration. It starts and stops se
 - Show diagnostics and code actions
 - Install servers via picker and manage Copilot auth
 - Auto-start servers from `buffer.file-open` hook bindings by extension
-- Expose per-server `lsp.start-*` commands (rust-analyzer, marksman, typescript-language-server, and others)
+- Expose per-server `lsp.start-*` commands (rust-analyzer, marksman, typescript-language-server, `powershell-editor-services`, and others)
 
 ## Commands
 
@@ -50,11 +50,14 @@ Additional `lsp.start-*` commands exist per registered server — see `user/lsp.
 
 ## Notes
 
-Auto-start bindings fire on `buffer.file-open` for registered extensions (`.rs`, `.md`, `.ts`/`.tsx`/`.js`/`.jsx`, `.cs`/`.razor`/`.cshtml`, and more). Language-server specs are exported from `user/lsp.rs` via `language_servers()`.
+Auto-start bindings fire on `buffer.file-open` for registered extensions (`.rs`, `.md`, `.ts`/`.tsx`/`.js`/`.jsx`, `.cs`/`.razor`/`.cshtml`, `.ps1`/`.psm1`/`.psd1`, and more). Language-server specs are exported from `user/lsp.rs` via `language_servers()`.
+
+**PowerShell:** The `lang-powershell` package (`user/lang/powershell.rs`) attaches on `.ps1`, `.psm1`, and `.psd1` and registers tree-sitter grammar [airbus-cert/tree-sitter-powershell](https://github.com/airbus-cert/tree-sitter-powershell). Highlight queries ship under `crates/volt/assets/grammars/queries/powershell/`. Default editor settings for the language id live in `user/themes/global.toml` under `[langs.powershell]`. LSP uses **PowerShell Editor Services** (`powershell-editor-services`): run `lsp.install-server` and pick that id, or `lsp.start-powershell-editor-services`. Install unpacks the `PowerShellEditorServices.zip` GitHub release and runs `Start-EditorServices.ps1` via `pwsh`. Workspace roots can include `*.psd1` or `PSScriptAnalyzerSettings.psd1` markers.
 
 ## Related pages
 
 - [ACP Plugin](/plugins/acp)
 - [Builtin plugin catalog](/plugins/catalog)
 - [Edit a plugin](/user-packages/edit-plugin)
+- [Add a language](/languages/add-language)
 - [Plugin concepts](/user-packages/concepts)

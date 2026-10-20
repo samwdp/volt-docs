@@ -24,7 +24,7 @@ Package naming convention from the helper: `lang-{language_id}`, attach command 
 
 ## Using the common helper
 
-The helper builds a standard attach command, file-open hook binding, and syntax configuration. Copy a recent language module that already uses `common::package` / `common::syntax_language` and adjust:
+The helper builds a standard attach command, file-open hook binding, and syntax configuration. Copy a recent language module that already uses `common::package` / `common::syntax_language` and adjust (for example `user/lang/powershell.rs` for `.ps1`/`.psm1`/`.psd1` with PowerShell Editor Services in `user/lsp.rs`):
 
 - language id / display name
 - file extensions

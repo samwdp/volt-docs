@@ -9,6 +9,12 @@ description: Recent Volt editor changes relevant to docs, plugins, and in-editor
 
 Filter-friendly log of user-facing editor changes mirrored into these docs. Issue links use GitHub: `#N` → `https://github.com/samwdp/volt/issues/N`.
 
+## 2026-10-20
+
+| Type | Summary |
+| --- | --- |
+| feat | PowerShell language package (`lang-powershell`): tree-sitter grammar, `.ps1`/`.psm1`/`.psd1` auto-attach, theme defaults, file icons; LSP via PowerShell Editor Services (GitHub release install) — [LSP](/plugins/lsp), [Add a language](/languages/add-language) |
+
 ## 2026-10-06
 
 | Type | Summary |
