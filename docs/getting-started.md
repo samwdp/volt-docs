@@ -47,7 +47,18 @@ cargo build -p volt -p volt-user --release
 cargo run -p volt
 ```
 
-Press **F1** (or run `help`) to ask a docs question; Volt opens search in a [browser](/plugins/browser) split. See [Help Plugin](/plugins/help).
+The default window is the SDL3 shell. Choose the UI backend with `--ui`:
+
+```bash
+cargo run -p volt -- --ui=sdl
+cargo run -p volt -- --ui=gpui
+```
+
+`--ui=sdl` keeps the SDL3 shell. `--ui=gpui` (alias `--ui=gupi`) opens a GPUI window that paints the same editor scene: panes, buffer text, modeline, docks, pickers, hover, autocomplete, the command line, and the terminal. That window uses the theme window backdrop from `window.transparency` (`blur`, `acrylic`, `mica`, `mica-tabbed`). The embedded browser webview stays on the SDL shell and is skipped in GPUI mode.
+
+A second `--ui` flag is an error. An unknown value errors and names the expected values `sdl` and `gpui`. `--ui=gpui` cannot be combined with `--bootstrap-demo`.
+
+Press **F1** (or run `help`) to ask a docs question; Volt opens search in a [browser](/plugins/browser) split. See [Help Plugin](/plugins/help). The browser split needs the SDL shell.
 
 Smoke-test without an interactive window:
 

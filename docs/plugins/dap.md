@@ -50,6 +50,11 @@ The **dap** plugin integrates Debug Adapter Protocol sessions. It launches adapt
 ## Notes
 
 Additional commands cover breakpoint conditions, logpoints, expression add/remove, goto-breakpoint, toggle-variable, and `start-<adapter>` variants. See `user/dap.rs`.
+
+C# start (`dap.start-sharpdbg`, or `dap.start` when the compile step is `dotnet build`) can debug a solution or project that is not at the workspace root, including a workspace with several projects. When more than one `.sln`, `.slnx`, or `.csproj` exists, **Build with dotnet** lists `dotnet build <relative path>` for each target, nearest project to the open file first, plus **Start without compiling**. A single target outside the workspace root is built with `dotnet build <relative path>`; a single target in the root still uses `dotnet build`. After the build target is chosen, a **Compiling** notice (status Working) and a live compile popup stay up until the build finishes.
+
+After that build, the debug assembly is an entry DLL only: `AssemblyName` when set, otherwise the directory that contains the `.csproj` (for example `dotnet_api/api.csproj` → `dotnet_api.dll`) and the project file stem (`api.dll`). Search is under that project's `bin` tree (and `OutputPath` when set). A solution uses the entry assemblies of the projects it lists. Executable projects (`OutputType` Exe or WinExe) sort first. One match is used automatically; several open **Debug assembly**. Dependency DLLs are not listed.
+
 ## Related pages
 
 - [Builtin plugin catalog](/plugins/catalog)
